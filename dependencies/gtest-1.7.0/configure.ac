@@ -29,6 +29,9 @@ AC_PROG_CXX
 AC_LANG([C++])
 AC_PROG_LIBTOOL
 
+# gtest-1.7.0 library is built in the package.
+AC_PROG_RANLIB
+
 # TODO(chandlerc@google.com): Currently we aren't running the Python tests
 # against the interpreter detected by AM_PATH_PYTHON, and so we condition
 # HAVE_PYTHON by requiring "python" to be in the PATH, and that interpreter's

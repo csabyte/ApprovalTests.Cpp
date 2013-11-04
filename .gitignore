@@ -11,3 +11,7 @@
 *.lai
 *.la
 *.a
+
+# Automake cache
+autom4te.cache/
+dependencies/gtest-1.7.0/autom4te.cache/
