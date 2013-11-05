@@ -9,6 +9,7 @@ AC_INIT([ApprovalTests.Cpp], [0.9.0])
 # Alternative directory for auxiliary scripts.
 #
 AC_CONFIG_AUX_DIR(cfg)
+AC_CONFIG_MACRO_DIR([m4])
 
 #
 # Init Automake subsystem.
