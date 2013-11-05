@@ -14,7 +14,7 @@ AC_CONFIG_AUX_DIR(cfg)
 # Init Automake subsystem.
 #
 AM_INIT_AUTOMAKE
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADERS([cfg/config.h])
 
 #
 # It checks for the C++ compiler, and sets the variables CXX, GXX and CXXFLAGS.
