@@ -22,6 +22,11 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CXX
 
 #
+# Checks for libraries.
+#
+AC_CHECK_LIB(pthread, pthread_create)
+
+#
 # Create Makefile by copying the input file (Makefile.in) 
 #
 AC_CONFIG_FILES([Makefile])
