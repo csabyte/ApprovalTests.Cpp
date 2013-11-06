@@ -19,5 +19,5 @@ dependencies/gtest-1.7.0/autom4te.cache/
 # Ignore build directory
 build/debug/
 build/release/
-
+cfg/
 .settings/language.settings.xml

@@ -1,10 +1,12 @@
 #include <iostream>
 #include "gtest/gtest.h"
+#include "Approvals.h"
 using namespace std;
 
 
-TEST(FactorialTest, Zero) {
-  EXPECT_EQ(1, 1);
+TEST(ApprovalsTest, testVerify) {
+  Approvals approvals;
+  EXPECT_EQ(20, approvals.verify("verify string length"));
 }
 
 
