@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 #include "ApprovalsTest.h"
 #include "GoogleTestNamerTest.h"
+#include "ApprovalTextWriterTest.h"
 using namespace std;
 
 int main(int argc, char **argv) {
