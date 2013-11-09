@@ -17,7 +17,7 @@ class IApprovalWriter {
 	public:
 		virtual ~IApprovalWriter() {};
 		virtual void writeReceivedFile(IFileUtils* fileUtils
-										, const std::string& received) = 0;
+		                                , const std::string& received) = 0;
 		virtual std::string getReceivedFilename(const std::string& base) = 0;
 		virtual std::string getApprovalFilename(const std::string& base) = 0;
 };

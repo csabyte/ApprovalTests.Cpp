@@ -20,7 +20,7 @@ ApprovalTextWriter::~ApprovalTextWriter() {
 }
 
 void ApprovalTextWriter::writeReceivedFile(IFileUtils* fileUtils
-											, const std::string& received) {
+                                            , const std::string& received) {
 	fileUtils->writeTextInFile(mText, received);
 }
 

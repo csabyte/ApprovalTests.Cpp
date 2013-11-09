@@ -15,7 +15,7 @@ class FakeFileUtils : public IFileUtils {
 	public:
 		FakeFileUtils() : mFile(""), mFileContent("") {}
 		virtual void writeTextInFile(const std::string& text
-									, const std::string& file) {
+		                            , const std::string& file) {
 			mFileContent = text;
 			mFile = file;
 		}
@@ -30,13 +30,13 @@ class FakeFileUtils : public IFileUtils {
 TEST(ApprovalTextWriter, testReceivedFilename) {
 	ApprovalTextWriter writer("This is a text");
 	EXPECT_EQ("MyReceivedFilename.received.txt"
-				, writer.getReceivedFilename("MyReceivedFilename"));
+	            , writer.getReceivedFilename("MyReceivedFilename"));
 }
 
 TEST(ApprovalTextWriter, testApprovedFilename) {
 	ApprovalTextWriter writer("This is a text");
 	EXPECT_EQ("MyApprovalFilename.approved.txt"
-				, writer.getApprovalFilename("MyApprovalFilename"));
+	            , writer.getApprovalFilename("MyApprovalFilename"));
 }
 
 TEST(ApprovalTextWriter, testWriteReceivedFile) {
