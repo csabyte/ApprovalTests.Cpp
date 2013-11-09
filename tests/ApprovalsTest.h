@@ -1,17 +1,19 @@
-#include <iostream>
+/*
+ * ApprovalsTest.h
+ *
+ *  Created on: 2013.11.09.
+ *      Author: thamm
+ */
+
+#ifndef APPROVALSTEST_H_
+#define APPROVALSTEST_H_
+
 #include "gtest/gtest.h"
 #include "Approvals.h"
-using namespace std;
-
 
 TEST(ApprovalsTest, testVerify) {
   Approvals approvals;
   EXPECT_EQ(20, approvals.verify("verify string length"));
 }
 
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
-
+#endif /* APPROVALSTEST_H_ */

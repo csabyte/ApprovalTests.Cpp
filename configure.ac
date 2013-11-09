@@ -1,4 +1,4 @@
-AC_PREREQ([2.68])
+AC_PREREQ([2.65])
 
 #
 # Essential initialization for the generated `configure' script.

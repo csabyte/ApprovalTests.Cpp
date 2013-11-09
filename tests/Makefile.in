@@ -34,8 +34,8 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-TESTS = checklib$(EXEEXT)
-bin_PROGRAMS = checklib$(EXEEXT)
+TESTS = run_all_tests$(EXEEXT)
+bin_PROGRAMS = run_all_tests$(EXEEXT)
 subdir = tests
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -51,9 +51,10 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_checklib_OBJECTS = checklib.$(OBJEXT)
-checklib_OBJECTS = $(am_checklib_OBJECTS)
-checklib_DEPENDENCIES = $(top_builddir)/libapprovaltestcpp-0.9.0.la \
+am_run_all_tests_OBJECTS = run_all_tests.$(OBJEXT)
+run_all_tests_OBJECTS = $(am_run_all_tests_OBJECTS)
+run_all_tests_DEPENDENCIES =  \
+	$(top_builddir)/libapprovaltestcpp-0.9.0.la \
 	$(top_builddir)/dependencies/gtest-1.7.0/lib/.libs/libgtest.a
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/cfg
 depcomp = $(SHELL) $(top_srcdir)/cfg/depcomp
@@ -68,8 +69,8 @@ CXXLD = $(CXX)
 CXXLINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-SOURCES = $(checklib_SOURCES)
-DIST_SOURCES = $(checklib_SOURCES)
+SOURCES = $(run_all_tests_SOURCES)
+DIST_SOURCES = $(run_all_tests_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 am__tty_colors = \
@@ -194,9 +195,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-checklib_SOURCES = checklib.cpp 
+run_all_tests_SOURCES = run_all_tests.cpp 
 AM_CPPFLAGS = -I$(top_srcdir)/dependencies/gtest-1.7.0/include -I$(top_srcdir)/include
-checklib_LDADD = $(top_builddir)/libapprovaltestcpp-0.9.0.la $(top_builddir)/dependencies/gtest-1.7.0/lib/.libs/libgtest.a
+run_all_tests_LDADD = $(top_builddir)/libapprovaltestcpp-0.9.0.la $(top_builddir)/dependencies/gtest-1.7.0/lib/.libs/libgtest.a
 all: all-am
 
 .SUFFIXES:
@@ -274,9 +275,9 @@ clean-binPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-checklib$(EXEEXT): $(checklib_OBJECTS) $(checklib_DEPENDENCIES) $(EXTRA_checklib_DEPENDENCIES) 
-	@rm -f checklib$(EXEEXT)
-	$(CXXLINK) $(checklib_OBJECTS) $(checklib_LDADD) $(LIBS)
+run_all_tests$(EXEEXT): $(run_all_tests_OBJECTS) $(run_all_tests_DEPENDENCIES) $(EXTRA_run_all_tests_DEPENDENCIES) 
+	@rm -f run_all_tests$(EXEEXT)
+	$(CXXLINK) $(run_all_tests_OBJECTS) $(run_all_tests_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -284,7 +285,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checklib.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/run_all_tests.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

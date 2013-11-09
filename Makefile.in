@@ -84,7 +84,8 @@ am__uninstall_files_from_dir = { \
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libapprovaltestcpp_0_9_0_la_LIBADD =
-am_libapprovaltestcpp_0_9_0_la_OBJECTS = Approvals.lo
+am_libapprovaltestcpp_0_9_0_la_OBJECTS = Approvals.lo \
+	GoogleTestNamer.lo
 libapprovaltestcpp_0_9_0_la_OBJECTS =  \
 	$(am_libapprovaltestcpp_0_9_0_la_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/cfg
@@ -288,8 +289,8 @@ SUBDIRS = dependencies/gtest-1.7.0 . tests
 # Include gtest-1.7.0's header when compiling this directory.
 AM_CPPFLAGS = -I$(srcdir)/dependencies/gtest-1.7.0/include -I$(srcdir)/include
 lib_LTLIBRARIES = libapprovaltestcpp-0.9.0.la
-libapprovaltestcpp_0_9_0_la_SOURCES = src/approvers/Approvals.cpp
-include_HEADERS = include/Approvals.h
+libapprovaltestcpp_0_9_0_la_SOURCES = src/approvers/Approvals.cpp src/namer/GoogleTestNamer.cpp
+include_HEADERS = include/Approvals.h include/GoogleTestNamer.h
 
 # link with the gtest-1.7.0 library.
 approval_LDADD = dependencies/gtest-1.7.0/lib/.libs/libgtest.a
@@ -387,6 +388,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Approvals.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GoogleTestNamer.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -415,6 +417,13 @@ Approvals.lo: src/approvers/Approvals.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/approvers/Approvals.cpp' object='Approvals.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Approvals.lo `test -f 'src/approvers/Approvals.cpp' || echo '$(srcdir)/'`src/approvers/Approvals.cpp
+
+GoogleTestNamer.lo: src/namer/GoogleTestNamer.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT GoogleTestNamer.lo -MD -MP -MF $(DEPDIR)/GoogleTestNamer.Tpo -c -o GoogleTestNamer.lo `test -f 'src/namer/GoogleTestNamer.cpp' || echo '$(srcdir)/'`src/namer/GoogleTestNamer.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/GoogleTestNamer.Tpo $(DEPDIR)/GoogleTestNamer.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/namer/GoogleTestNamer.cpp' object='GoogleTestNamer.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o GoogleTestNamer.lo `test -f 'src/namer/GoogleTestNamer.cpp' || echo '$(srcdir)/'`src/namer/GoogleTestNamer.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo
