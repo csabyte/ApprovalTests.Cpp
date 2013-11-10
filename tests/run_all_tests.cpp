@@ -3,6 +3,8 @@
 #include "ApprovalsTest.h"
 #include "GoogleTestNamerTest.h"
 #include "ApprovalTextWriterTest.h"
+#include "GenericDiffReporterTest.h"
+
 using namespace std;
 
 int main(int argc, char **argv) {

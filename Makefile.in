@@ -85,7 +85,8 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libapprovaltestcpp_0_9_0_la_LIBADD =
 am_libapprovaltestcpp_0_9_0_la_OBJECTS = Approvals.lo \
-	GoogleTestNamer.lo ApprovalTextWriter.lo FileUtils.lo
+	GoogleTestNamer.lo ApprovalTextWriter.lo FileUtils.lo \
+	GenericDiffReporter.lo Kdiff3Reporter.lo
 libapprovaltestcpp_0_9_0_la_OBJECTS =  \
 	$(am_libapprovaltestcpp_0_9_0_la_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/cfg
@@ -289,7 +290,7 @@ SUBDIRS = dependencies/gtest-1.7.0 . tests
 # Include gtest-1.7.0's header when compiling this directory.
 AM_CPPFLAGS = -I$(srcdir)/dependencies/gtest-1.7.0/include -I$(srcdir)/include
 lib_LTLIBRARIES = libapprovaltestcpp-0.9.0.la
-libapprovaltestcpp_0_9_0_la_SOURCES = src/approvers/Approvals.cpp src/namer/GoogleTestNamer.cpp src/writer/ApprovalTextWriter.cpp src/utils/FileUtils.cpp
+libapprovaltestcpp_0_9_0_la_SOURCES = src/approvers/Approvals.cpp src/namer/GoogleTestNamer.cpp src/writer/ApprovalTextWriter.cpp src/utils/FileUtils.cpp src/reporters/GenericDiffReporter.cpp src/reporters/Kdiff3Reporter.cpp
 include_HEADERS = include/Approvals.h include/GoogleTestNamer.h include/ApprovalTextWriter.h include/FileUtils.h
 
 # link with the gtest-1.7.0 library.
@@ -390,7 +391,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ApprovalTextWriter.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Approvals.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/FileUtils.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GenericDiffReporter.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GoogleTestNamer.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Kdiff3Reporter.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -440,6 +443,20 @@ FileUtils.lo: src/utils/FileUtils.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/utils/FileUtils.cpp' object='FileUtils.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o FileUtils.lo `test -f 'src/utils/FileUtils.cpp' || echo '$(srcdir)/'`src/utils/FileUtils.cpp
+
+GenericDiffReporter.lo: src/reporters/GenericDiffReporter.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT GenericDiffReporter.lo -MD -MP -MF $(DEPDIR)/GenericDiffReporter.Tpo -c -o GenericDiffReporter.lo `test -f 'src/reporters/GenericDiffReporter.cpp' || echo '$(srcdir)/'`src/reporters/GenericDiffReporter.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/GenericDiffReporter.Tpo $(DEPDIR)/GenericDiffReporter.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/reporters/GenericDiffReporter.cpp' object='GenericDiffReporter.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o GenericDiffReporter.lo `test -f 'src/reporters/GenericDiffReporter.cpp' || echo '$(srcdir)/'`src/reporters/GenericDiffReporter.cpp
+
+Kdiff3Reporter.lo: src/reporters/Kdiff3Reporter.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT Kdiff3Reporter.lo -MD -MP -MF $(DEPDIR)/Kdiff3Reporter.Tpo -c -o Kdiff3Reporter.lo `test -f 'src/reporters/Kdiff3Reporter.cpp' || echo '$(srcdir)/'`src/reporters/Kdiff3Reporter.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/Kdiff3Reporter.Tpo $(DEPDIR)/Kdiff3Reporter.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/reporters/Kdiff3Reporter.cpp' object='Kdiff3Reporter.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Kdiff3Reporter.lo `test -f 'src/reporters/Kdiff3Reporter.cpp' || echo '$(srcdir)/'`src/reporters/Kdiff3Reporter.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo

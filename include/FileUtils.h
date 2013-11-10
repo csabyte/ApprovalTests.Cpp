@@ -15,6 +15,8 @@ class FileUtils : public IFileUtils {
 	public:
 		virtual void writeTextInFile(const std::string& text, const std::string& file);
 		virtual bool isFileExist(const std::string& file);
+		static std::string getExtensionWithDot(const std::string& file);
+		void createFileIfNeeded(const std::string& file);
 };
 
 #endif /* FILEUTILS_H_ */
