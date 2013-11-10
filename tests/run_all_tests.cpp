@@ -3,7 +3,15 @@
 #include "ApprovalsTest.h"
 #include "GoogleTestNamerTest.h"
 #include "ApprovalTextWriterTest.h"
+#include "GenericDiffReporterTest.h"
+
+#include "Approvals.h"
 using namespace std;
+
+TEST(ApprovalTest, testVerify) {
+    Approvals approvals;
+    approvals.verify("This is an approvable content");
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

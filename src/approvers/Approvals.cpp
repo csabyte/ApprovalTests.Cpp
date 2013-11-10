@@ -13,6 +13,6 @@ Approvals::Approvals() {}
 Approvals::~Approvals() {}
 
 int Approvals::verify(const std::string& sContent) {
-   return sContent.length();  
+    return sContent.size();
 }
 

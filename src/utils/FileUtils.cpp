@@ -24,4 +24,19 @@ bool FileUtils::isFileExist(const std::string& file) {
 	 return (stat(file.c_str(), &buffer) == 0);
 }
 
+std::string FileUtils::getExtensionWithDot(const std::string& filename) {
+    string extensionWithDot;
+    string::size_type idx = filename.rfind('.');
 
+    if(idx != string::npos)
+    {
+        extensionWithDot = filename.substr(idx);
+    }
+    return extensionWithDot;
+}
+
+void FileUtils::createFileIfNeeded(const std::string& file) {
+    if (!isFileExist(file)) {
+        writeTextInFile("", file);
+    }
+}
