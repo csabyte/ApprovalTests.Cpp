@@ -7,11 +7,6 @@
 
 using namespace std;
 
-TEST(ApprovalTest, testVerify) {
-    Approvals approvals;
-    approvals.verify("This is an approvable content");
-}
-
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
