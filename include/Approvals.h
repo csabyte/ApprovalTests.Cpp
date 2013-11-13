@@ -10,12 +10,15 @@
 
 #include <string>
 #include <vector>
+#include "FileApprover.h"
+#include "IApprovalReporter.h"
 
 class Approvals {
 	public:
 		Approvals();
 		virtual ~Approvals();
-		static int verify(const std::string& sContent);
+		static void verify(const std::string& sContent);
+		static void verify(FileApprover* approver, IApprovalReporter* reporter);
 };
 
 #endif /* APPROVALS_H_ */

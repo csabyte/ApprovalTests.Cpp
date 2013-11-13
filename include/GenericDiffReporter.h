@@ -23,7 +23,7 @@ public:
     virtual void report(const std::string& received
                                 , const std::string& approved);
     virtual bool isWorkingInThisEnvironment(const std::string& forFile);
-
+    virtual bool approvedWhenReported();
 private:
     FRIEND_TEST(GenericDiffReporterTest, testCtor);
     FRIEND_TEST(GenericDiffReporterTest, testIsExtensionValidForTxt);

@@ -15,4 +15,6 @@ Kdiff3Reporter::Kdiff3Reporter()
 
 }
 
-
+bool Kdiff3Reporter::approvedWhenReported() {
+    return true;
+}

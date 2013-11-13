@@ -15,6 +15,7 @@ class IApprovalReporter {
 		virtual ~IApprovalReporter() {}
 		virtual void report(const std::string& received
 		                    , const std::string& approved) = 0;
+		virtual bool approvedWhenReported() = 0;
 };
 
 #endif /* IAPPROVALREPORTER_H_ */

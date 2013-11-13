@@ -6,6 +6,7 @@
  */
 
 #include <fstream>
+#include <streambuf>
 #include <assert.h>
 #include <sys/stat.h>
 #include "FileUtils.h"
@@ -39,4 +40,11 @@ void FileUtils::createFileIfNeeded(const std::string& file) {
     if (!isFileExist(file)) {
         writeTextInFile("", file);
     }
+}
+
+std::string FileUtils::readFile(const std::string& file) {
+    std::ifstream in(file.c_str());
+    std::string content((std::istreambuf_iterator<char>(in)),
+                     std::istreambuf_iterator<char>());
+    return content;
 }

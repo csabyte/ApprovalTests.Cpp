@@ -13,7 +13,7 @@
 
 TEST(ApprovalsTest, testVerify) {
   Approvals approvals;
-  EXPECT_EQ(20, approvals.verify("verify string length"));
+  approvals.verify("verify int length");
 }
 
 #endif /* APPROVALSTEST_H_ */

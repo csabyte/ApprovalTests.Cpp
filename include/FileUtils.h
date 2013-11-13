@@ -17,6 +17,7 @@ class FileUtils : public IFileUtils {
 		virtual bool isFileExist(const std::string& file);
 		static std::string getExtensionWithDot(const std::string& file);
 		void createFileIfNeeded(const std::string& file);
+		std::string readFile(const std::string& file);
 };
 
 #endif /* FILEUTILS_H_ */

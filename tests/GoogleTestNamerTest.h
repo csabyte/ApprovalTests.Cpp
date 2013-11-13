@@ -35,7 +35,7 @@ TEST_F(NamerTest, testTestName) {
 }
 
 TEST_F(NamerTest, testApprovalName) {
-	EXPECT_EQ("NamerTest.testApprovalName.approved.txt", mNamer->getApprovalName());
+	EXPECT_EQ("NamerTest.testApprovalName", mNamer->getApprovalName());
 }
 
 #endif /* GOOGLETESTNAMERTEST_H_ */

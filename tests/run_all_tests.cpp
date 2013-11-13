@@ -4,6 +4,7 @@
 #include "GoogleTestNamerTest.h"
 #include "ApprovalTextWriterTest.h"
 #include "GenericDiffReporterTest.h"
+#include "FileApproverTest.h"
 
 using namespace std;
 

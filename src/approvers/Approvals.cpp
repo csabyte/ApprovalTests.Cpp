@@ -6,13 +6,32 @@
  */
 
 #include <stdio.h>
+#include "ApprovalTextWriter.h"
+#include "GoogleTestNamer.h"
+#include "Kdiff3Reporter.h"
 #include "Approvals.h"
 
 Approvals::Approvals() {}
 
 Approvals::~Approvals() {}
 
-int Approvals::verify(const std::string& sContent) {
-    return sContent.size();
+void Approvals::verify(const std::string& sContent) {
+    ApprovalTextWriter writer(sContent);
+    GoogleTestNamer namer;
+    FileApprover approver(&writer, &namer);
+    Kdiff3Reporter reporter;
+    verify(&approver, &reporter);
 }
 
+void Approvals::verify(FileApprover* approver, IApprovalReporter* reporter) {
+    if (approver->approve(reporter)) {
+        approver->cleanUpAfterSuccess(reporter);
+    }
+    else {
+        approver->reportFailure(reporter);
+        if (reporter->approvedWhenReported()) {
+            approver->cleanUpAfterSuccess(reporter);
+        }
+        approver->fail();
+    }
+}

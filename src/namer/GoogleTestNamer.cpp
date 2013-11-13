@@ -22,8 +22,7 @@ GoogleTestNamer::~GoogleTestNamer() {
 std::string GoogleTestNamer::getApprovalName() {
 	std::string sOut;
 	if (mGTestInfo) {
-		sOut = getTestCaseName() + cDelimiter + getTestName()
-				+ cDelimiter + "approved" + ".txt";
+		sOut = getTestCaseName() + cDelimiter + getTestName();
 	}
 	return sOut;
 }

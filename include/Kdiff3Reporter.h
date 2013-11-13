@@ -14,6 +14,7 @@
 class Kdiff3Reporter : public GenericDiffReporter {
 	public:
         Kdiff3Reporter();
+        virtual bool approvedWhenReported();
 };
 
 

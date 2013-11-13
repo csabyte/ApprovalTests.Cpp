@@ -72,6 +72,10 @@ void GenericDiffReporter::launchDiffProgram(const std::string& cmdLine) {
     }*/
 }
 
+bool GenericDiffReporter::approvedWhenReported() {
+    return false;
+}
+
 std::string GenericDiffReporter::getCommandLine(const std::string& received
                                 , const std::string& approved) {
     ostringstream ostr;
