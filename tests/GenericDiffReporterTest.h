@@ -43,8 +43,8 @@ TEST_F(GenericDiffReporterTest, testIsExtensionValidForGzip) {
     EXPECT_EQ(false, mReporter->isExtensionValid("filename.gzip"));
 }
 
-TEST_F(GenericDiffReporterTest, testIsDirCommandExist) {
-    EXPECT_EQ(true, mReporter->isCommandExist("/bin/dir"));
+TEST_F(GenericDiffReporterTest, testIsPwdCommandExist) {
+    EXPECT_EQ(true, mReporter->isCommandExist("/bin/pwd"));
 }
 
 TEST_F(GenericDiffReporterTest, testIsQwertyCommandExist) {

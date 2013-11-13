@@ -29,7 +29,7 @@ private:
     FRIEND_TEST(GenericDiffReporterTest, testIsExtensionValidForTxt);
     FRIEND_TEST(GenericDiffReporterTest, testIsExtensionValidForTxtWithPath);
     FRIEND_TEST(GenericDiffReporterTest, testIsExtensionValidForGzip);
-    FRIEND_TEST(GenericDiffReporterTest, testIsDirCommandExist);
+    FRIEND_TEST(GenericDiffReporterTest, testIsPwdCommandExist);
     FRIEND_TEST(GenericDiffReporterTest, testIsQwertyCommandExist);
     FRIEND_TEST(GenericDiffReporter, testCommandLine);
 
