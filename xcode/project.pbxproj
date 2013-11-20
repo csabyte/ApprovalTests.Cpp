@@ -70,6 +70,13 @@
 			remoteGlobalIDString = 3B07BDEA0E3F3F9E00647869;
 			remoteInfo = WidgetFrameworkTest;
 		};
+		35B370E318344689005243E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3568455B18342FCF0065D671 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35B370D2183444B2005243E9;
+			remoteInfo = configure;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -941,10 +948,39 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
+				35B370E418344689005243E9 /* PBXTargetDependency */,
 			);
 			name = ApprovalTestsCpp;
 			passBuildSettingsInEnvironment = 1;
 			productName = ApprovalTestsCpp;
+		};
+		35B370D2183444B2005243E9 /* configure */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 35B370E2183444B2005243E9 /* Build configuration list for PBXLegacyTarget "configure" */;
+			buildPhases = (
+			);
+			buildToolPath = ./xcode/targetdep.sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = configure;
+			passBuildSettingsInEnvironment = 1;
+			productName = configure;
+		};
+		35F7A042183C366B0095ECD0 /* distclean */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = distclean;
+			buildConfigurationList = 35F7A043183C366B0095ECD0 /* Build configuration list for PBXLegacyTarget "distclean" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = distclean;
+			passBuildSettingsInEnvironment = 1;
+			productName = distclean;
 		};
 /* End PBXLegacyTarget section */
 
@@ -977,6 +1013,8 @@
 			projectRoot = "";
 			targets = (
 				3568455F18342FCF0065D671 /* ApprovalTestsCpp */,
+				35B370D2183444B2005243E9 /* configure */,
+				35F7A042183C366B0095ECD0 /* distclean */,
 			);
 		};
 /* End PBXProject section */
@@ -1046,6 +1084,14 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
+
+/* Begin PBXTargetDependency section */
+		35B370E418344689005243E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35B370D2183444B2005243E9 /* configure */;
+			targetProxy = 35B370E318344689005243E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3568456018342FCF0065D671 /* Debug */ = {
@@ -1137,6 +1183,56 @@
 			};
 			name = Release;
 		};
+		35B370D3183444B2005243E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		35B370D4183444B2005243E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		35F7A044183C366B0095ECD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		35F7A045183C366B0095ECD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1157,6 +1253,23 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		35B370E2183444B2005243E9 /* Build configuration list for PBXLegacyTarget "configure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35B370D3183444B2005243E9 /* Debug */,
+				35B370D4183444B2005243E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35F7A043183C366B0095ECD0 /* Build configuration list for PBXLegacyTarget "distclean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35F7A044183C366B0095ECD0 /* Debug */,
+				35F7A045183C366B0095ECD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
