@@ -27,6 +27,10 @@ void Approvals::verify(const std::string& sContent) {
     verify(&approver, &reporter);
 }
 
+void Approvals::verify(IApprovable* object) {
+    verify(object->toString());
+}
+
 void Approvals::verify(FileApprover* approver, IApprovalReporter* reporter) {
     if (approver->approve(reporter)) {
         approver->cleanUpAfterSuccess(reporter);

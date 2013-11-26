@@ -10,10 +10,20 @@
 
 #include "gtest/gtest.h"
 #include "Approvals.h"
+#include "IApprovable.h"
 
 TEST(ApprovalsTest, testVerify) {
-  Approvals approvals;
-  approvals.verify("verify my name\nThis is an approval test.");
+    Approvals::verify("verify my name\nThis is an approval test.");
+}
+
+class MyTestClass : public IApprovable {
+    public:
+        std::string toString() {return "hello approvals";}
+};
+
+TEST(ApprovalsTest, testApprovalableObject) {
+    MyTestClass testObj;
+    Approvals::verify(&testObj);
 }
 
 #endif /* APPROVALSTEST_H_ */

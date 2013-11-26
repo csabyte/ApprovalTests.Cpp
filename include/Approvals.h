@@ -12,12 +12,14 @@
 #include <vector>
 #include "FileApprover.h"
 #include "IApprovalReporter.h"
+#include "IApprovable.h"
 
 class Approvals {
 	public:
 		Approvals();
 		virtual ~Approvals();
 		static void verify(const std::string& sContent);
+		static void verify(IApprovable* object);
 		static void verify(FileApprover* approver, IApprovalReporter* reporter);
 };
 
