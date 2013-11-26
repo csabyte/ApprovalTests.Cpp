@@ -48,6 +48,11 @@ bool FileApprover::approveTextFile(const std::string& received, const std::strin
 
     const std::string receivedContent = utils.readFile(received);
     const std::string approvedContent = utils.readFile(approved);
-    return (receivedContent.compare(approvedContent) == 0);
+    
+    int lastCrLf = approvedContent.find_last_of("\n");
+    if (lastCrLf != approvedContent.length()-1) {
+        lastCrLf = string::npos;
+    }
+    return (receivedContent.compare(approvedContent.substr(0, lastCrLf)) == 0);
 }
 

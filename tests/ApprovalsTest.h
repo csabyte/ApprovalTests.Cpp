@@ -13,7 +13,7 @@
 
 TEST(ApprovalsTest, testVerify) {
   Approvals approvals;
-  approvals.verify("verify int length");
+  approvals.verify("verify my name\nThis is an approval test.");
 }
 
 #endif /* APPROVALSTEST_H_ */

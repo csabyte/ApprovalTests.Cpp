@@ -336,6 +336,10 @@
 		3568468D183430600065D671 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		3568468E183430600065D671 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
 		3568468F183430600065D671 /* run_all_tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = run_all_tests.cpp; sourceTree = "<group>"; };
+		35F7A055183D7C420095ECD0 /* FirstWorkingReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstWorkingReporter.h; sourceTree = "<group>"; };
+		35F7A056183D7D4A0095ECD0 /* FirstWorkingReporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FirstWorkingReporter.cpp; sourceTree = "<group>"; };
+		35F7A0581843EBD20095ECD0 /* DiffMergeReporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DiffMergeReporter.cpp; sourceTree = "<group>"; };
+		35F7A05A18451AEE0095ECD0 /* DiffMergeReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiffMergeReporter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -841,6 +845,7 @@
 		35684664183430600065D671 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				35F7A05A18451AEE0095ECD0 /* DiffMergeReporter.h */,
 				35684665183430600065D671 /* Approvals.h */,
 				35684666183430600065D671 /* ApprovalTextWriter.h */,
 				35684667183430600065D671 /* FileApprover.h */,
@@ -853,6 +858,7 @@
 				3568466E183430600065D671 /* IFileUtils.h */,
 				3568466F183430600065D671 /* INamer.h */,
 				35684670183430600065D671 /* Kdiff3Reporter.h */,
+				35F7A055183D7C420095ECD0 /* FirstWorkingReporter.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -891,6 +897,8 @@
 			children = (
 				3568467E183430600065D671 /* GenericDiffReporter.cpp */,
 				3568467F183430600065D671 /* Kdiff3Reporter.cpp */,
+				35F7A056183D7D4A0095ECD0 /* FirstWorkingReporter.cpp */,
+				35F7A0581843EBD20095ECD0 /* DiffMergeReporter.cpp */,
 			);
 			path = reporters;
 			sourceTree = "<group>";
@@ -1270,6 +1278,7 @@
 				35F7A045183C366B0095ECD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

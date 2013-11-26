@@ -35,7 +35,12 @@ void GenericDiffReporter::report(const std::string& received
     if (isWorkingInThisEnvironment(received)) {
         FileUtils utils;
         utils.createFileIfNeeded(received);
+        utils.createFileIfNeeded(approved);
         launchDiffProgram(getCommandLine(received, approved));
+    }
+    else
+    {
+        cerr << mDiffProgramNotFoundMsg << endl;
     }
 }
 
