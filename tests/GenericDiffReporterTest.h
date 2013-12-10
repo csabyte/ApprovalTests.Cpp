@@ -43,18 +43,22 @@ TEST_F(GenericDiffReporterTest, testIsExtensionValidForGzip) {
     EXPECT_EQ(false, mReporter->isExtensionValid("filename.gzip"));
 }
 
+#ifndef WIN32
 TEST_F(GenericDiffReporterTest, testIsPwdCommandExist) {
     EXPECT_EQ(true, mReporter->isCommandExist("/bin/pwd"));
 }
+#endif
 
 TEST_F(GenericDiffReporterTest, testIsQwertyCommandExist) {
     EXPECT_EQ(false, mReporter->isCommandExist("/bin/qwertycmd"));
 }
 
+#ifndef WIN32
 TEST(GenericDiffReporter, testIfMyFileWorkingInThisEnvironment) {
     GenericDiffReporter reporter("/bin/cat", "cat not found.");
     EXPECT_EQ(true, reporter.isWorkingInThisEnvironment("myfile.txt"));
 }
+#endif
 
 TEST(GenericDiffReporter, testIfMyFileWorkingWithNotExistingCmd) {
     GenericDiffReporter reporter("/usr/bin/cmdNotExist", "cmdNotExist not found.");
